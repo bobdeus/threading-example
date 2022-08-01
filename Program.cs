@@ -2,4 +2,12 @@
 
 using ThreadTesting;
 
-Console.WriteLine("Hello World");
+FileProcessoratorHandler.CreateTestFiles(10, 1000);
+var nonThreadingExample = new NonThreadingExample();
+nonThreadingExample.DoWork();
+Console.WriteLine("===================================================");
+Console.WriteLine("=================BEGIN THREADING===================");
+Console.WriteLine("===================================================");
+var threadingExample = new ThreadingExample();
+threadingExample.DoWork();
+FileProcessoratorHandler.DeleteTestFiles();
